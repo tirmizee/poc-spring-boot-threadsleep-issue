@@ -24,5 +24,11 @@ public class TestService {
         executor.schedule(() ->  logger.info("process step 2"), 5, TimeUnit.SECONDS);
     }
 
+    public void processDelayWithThreadSleep() throws InterruptedException {
+        logger.info("process count {} step 1 ", count.getAndIncrement());
+        Thread.sleep(5000);
+        logger.info("process step 2");
+    }
+
 }
 
